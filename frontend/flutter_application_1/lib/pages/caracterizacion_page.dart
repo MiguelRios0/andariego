@@ -12,7 +12,7 @@ class CaracterizacionPage extends StatefulWidget {
 
 class _CaracterizacionPageState extends State<CaracterizacionPage> {
   bool _guardando = false;
-  bool _cargando = true; // PUNTO 4: cargamos valores existentes al abrir
+  bool _cargando = true; 
 
   // ── Avatares ────────────────────────────────────────────
   final Map<String, String> _avatares = {
@@ -82,7 +82,7 @@ class _CaracterizacionPageState extends State<CaracterizacionPage> {
     _cargarCaracterizacionExistente();
   }
 
-  // PUNTO 4: Carga los datos actuales para mostrárselos al usuario al editar
+  // mostrár al usuario  los datos al editar
   Future<void> _cargarCaracterizacionExistente() async {
     try {
       final carac = await ApiService.getCaracterizacionUsuario(
@@ -122,7 +122,7 @@ class _CaracterizacionPageState extends State<CaracterizacionPage> {
     }
   }
 
-  // PUNTO 4: Upsert — sobreescribe la caracterización existente
+  // sobreescribe la caracterización existente
   Future<void> _guardar() async {
     if (_avatarSeleccionado == null) {
       ScaffoldMessenger.of(context).showSnackBar(
@@ -152,7 +152,7 @@ class _CaracterizacionPageState extends State<CaracterizacionPage> {
         'id_presupuesto': _presupuestoIds[_presupuesto],
       });
 
-      // PUNTO 4: Primero borramos los hobbies anteriores y luego guardamos los nuevos
+      //guardamos los nuevos hobbies
       await ApiService.reemplazarHobbiesUsuario(
         widget.usuario['id_usuario'],
         _hobbiesSeleccionados,
@@ -228,7 +228,7 @@ class _CaracterizacionPageState extends State<CaracterizacionPage> {
                     SizedBox(width: 8),
                     Expanded(
                       child: Text(
-                        'Estás editando tu caracterización. Los cambios sobreescribirán la anterior.',
+                        'nueva caracterizacion de usuario.',
                         style: TextStyle(color: Colors.green, fontSize: 13),
                       ),
                     ),
