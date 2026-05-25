@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../services/api_service.dart';
 import 'registro_page.dart';
-import 'home_page.dart'; // ← descomenta cuando tengas home_page
+import 'home_page.dart'; 
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
