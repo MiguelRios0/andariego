@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import '../services/api_service.dart';
 
 /// Página de comentarios públicos: muestra los comentarios de TODOS
-/// los usuarios para un lugar seleccionable. (Punto 6)
 class ComentariosPage extends StatefulWidget {
   final Map<String, dynamic> usuario;
   const ComentariosPage({super.key, required this.usuario});
@@ -207,7 +206,7 @@ class _ComentariosPageState extends State<ComentariosPage> {
                   ),
                 ),
 
-                // Lista de comentarios (PÚBLICOS de todos los usuarios)
+                // aqui creo la relacion y visualizacion de todos los comentarios
                 Expanded(
                   child: _lugarSeleccionado == null
                       ? const Center(
