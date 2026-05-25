@@ -27,7 +27,7 @@ class _RegistroPageState extends State<RegistroPage> {
   final List<String> _tiposDoc = ['TI', 'CC', 'CE', 'PA'];
 
   static const Color naranja = Color(0xFFE65100);
-  //static const Color naranjaClaro = Color(0xFFFF8A50);
+  
 
   InputDecoration _deco(String label, IconData icon) => InputDecoration(
     labelText: label,
