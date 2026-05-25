@@ -64,7 +64,7 @@ class _HomePageState extends State<HomePage> {
     }
   }
 
-  // ── PUNTO 2: Filtra por nombre_hobbie contra campo 'categoria' del lugar ──
+  //Filtra por nombre_hobbie contra campo 'categoria' del lugar ──
   List<dynamic> _lugaresPorHobbie(String nombreHobbie) {
     // Mapeo explícito hobbie → categorías en BD
     const Map<String, List<String>> mapeo = {
@@ -94,7 +94,7 @@ class _HomePageState extends State<HomePage> {
   //}).toList();
   //}
 
-  // ── PUNTO 3: Agrega lugar a ruta persistente en BD ──────
+  //se agrega el lugar a la ruta card
   Future<void> _agregarARuta(Map<String, dynamic> lugar) async {
     final yaEsta = _ruta.any((l) => l['id_lugar'] == lugar['id_lugar']);
     if (yaEsta) {
@@ -144,7 +144,7 @@ class _HomePageState extends State<HomePage> {
     }
   }
 
-  // ── PUNTO 5: Editar usuario con todos los campos del registro ──
+  //  Editar usuario ─
   void _mostrarDialogoEditarUsuario() {
     final nombreCtrl = TextEditingController(text: _usuario['nombre'] ?? '');
     final apellidoCtrl = TextEditingController(
@@ -299,7 +299,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  // ── PUNTO 1: Menú usuario con botón Cerrar sesión ────────
+  //  Menú usuario con botón Cerrar sesión 
   void _abrirMenuUsuario() {
     final String? avatar = _usuario['avatar'];
 
@@ -666,7 +666,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  // ── PUNTO 6 + 7: Card Ruta expandida con mapa y botones ─
+  //Card Ruta expandida con mapa y botones, aun no logramos traer el mapa de manera correcta, es lo proximo en hacer 
   Widget _cardRuta() {
     return Card(
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
@@ -689,7 +689,7 @@ class _HomePageState extends State<HomePage> {
           style: const TextStyle(fontSize: 12, color: Colors.grey),
         ),
         children: [
-          // PUNTO 7: Mapa de Girardot
+          // Mapa de Girardot
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 12),
             child: ClipRRect(
@@ -803,7 +803,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  // PUNTO 7: Item de lugar dentro de la ruta con imagen, nombre y descripción
+  //Item de lugar dentro de la ruta con imagen, nombre y descripción
   Widget _itemRuta(Map<String, dynamic> lugar) {
     return Column(
       children: [
@@ -898,7 +898,7 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  // PUNTO 6: Diálogo para comentar un lugar
+  // Diálogo para comentar un lugar
   void _mostrarDialogoComentario(Map<String, dynamic> lugar) {
     final comentarioCtrl = TextEditingController();
     int puntuacion = 5;
@@ -1086,7 +1086,7 @@ class _HomePageState extends State<HomePage> {
               if (lugar['contacto'] != null)
                 _infoFila(Icons.phone, 'Contacto', lugar['contacto']),
               const SizedBox(height: 20),
-              // PUNTO 6: Botones comentar, guardar y favorito en detalle de lugar
+              // Botones comentar, guardar y favorito en detalle de lugar
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
